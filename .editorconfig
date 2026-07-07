@@ -1,0 +1,156 @@
+root = true
+
+# ======================================================
+
+# MedActivities - EditorConfig
+
+# ======================================================
+
+[*]
+charset = utf-8
+end_of_line = crlf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+##############################
+
+# C#
+
+##############################
+
+[*.cs]
+
+indent_size = 4
+
+csharp_new_line_before_open_brace = all
+
+csharp_indent_case_contents = true
+csharp_indent_switch_labels = true
+
+dotnet_sort_system_directives_first = true
+
+dotnet_style_qualification_for_field = false:suggestion
+dotnet_style_qualification_for_property = false:suggestion
+dotnet_style_qualification_for_method = false:suggestion
+
+dotnet_style_predefined_type_for_locals_parameters_members = true:suggestion
+
+dotnet_style_predefined_type_for_member_access = true:suggestion
+
+dotnet_style_require_accessibility_modifiers = always
+
+##############################
+
+# JSON
+
+##############################
+
+[*.json]
+
+indent_size = 2
+
+##############################
+
+# YAML
+
+##############################
+
+[*.yml]
+
+indent_size = 2
+
+[*.yaml]
+
+indent_size = 2
+
+##############################
+
+# XML
+
+##############################
+
+[*.xml]
+
+indent_size = 2
+
+##############################
+
+# Markdown
+
+##############################
+
+[*.md]
+
+trim_trailing_whitespace = false
+
+##############################
+
+# HTML
+
+##############################
+
+[*.html]
+
+indent_size = 2
+
+##############################
+
+# CSS
+
+##############################
+
+[*.css]
+
+indent_size = 2
+
+##############################
+
+# SCSS
+
+##############################
+
+[*.scss]
+
+indent_size = 2
+
+##############################
+
+# JavaScript
+
+##############################
+
+[*.js]
+
+indent_size = 2
+
+##############################
+
+# TypeScript
+
+##############################
+
+[*.ts]
+
+indent_size = 2
+
+##############################
+
+# React TSX
+
+##############################
+
+[*.tsx]
+
+indent_size = 2
+
+##############################
+
+# JSX
+
+##############################
+
+[*.jsx]
+
+indent_size = 2
