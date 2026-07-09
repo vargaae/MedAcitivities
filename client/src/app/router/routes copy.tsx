@@ -23,16 +23,18 @@ export const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
+      {
+        element: <RequireAuth />,
+        children: [
+          { path: "activities", element: <ActivityDashboard /> },
+          { path: "activities/:id", element: <ActivityDetailsPage /> },
+          { path: "createActivity", element: <ActivityForm key="create" /> },
+          { path: "manage/:id", element: <ActivityForm /> },
+          { path: "profiles/:id", element: <ProfilePage /> },
+          { path: "change-password", element: <ChangePasswordForm /> },
+        ],
+      },
       { path: "", element: <HomePage /> },
-
-      // fejlesztés alatt RequireAuth nélkül
-      { path: "activities", element: <ActivityDashboard /> },
-      { path: "activities/:id", element: <ActivityDetailsPage /> },
-      { path: "createActivity", element: <ActivityForm key="create" /> },
-      { path: "manage/:id", element: <ActivityForm /> },
-      { path: "profiles/:id", element: <ProfilePage /> },
-      { path: "change-password", element: <ChangePasswordForm /> },
-
       { path: "counter", element: <Counter /> },
       { path: "errors", element: <TestErrors /> },
       { path: "not-found", element: <NotFound /> },

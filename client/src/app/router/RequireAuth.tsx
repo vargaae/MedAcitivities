@@ -1,18 +1,22 @@
-import {Navigate, Outlet, useLocation} from "react-router";
-import {useAccount} from "../../lib/hooks/useAccount.ts";
-import {Typography} from "@mui/material";
+import { Navigate, Outlet, useLocation } from "react-router";
+import { useAccount } from "../../lib/hooks/useAccount.ts";
+import { Typography } from "@mui/material";
 
 export default function RequireAuth() {
-    const {currentUser, loadingUserInfo} = useAccount()
-    const location = useLocation();
+  const { currentUser, loadingUserInfo } = useAccount();
+  const location = useLocation();
 
-    if (loadingUserInfo) return <Typography>Loading...</Typography>
+  const bypassAuth = import.meta.env.DEV;
 
-    if (!currentUser) {
-        return <Navigate to='/login' state={{from: location}} />
-    }
+  if (bypassAuth) {
+    return <Outlet />;
+  }
 
-    return (
-        <Outlet />
-    );
+  if (loadingUserInfo) return <Typography>Loading...</Typography>;
+
+  if (!currentUser) {
+    return <Navigate to="/login" state={{ from: location }} />;
+  }
+
+  return <Outlet />;
 }

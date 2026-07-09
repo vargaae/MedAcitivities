@@ -1,8 +1,11 @@
 import { useAccount } from "../../lib/hooks/useAccount.ts";
 import { useState } from "react";
 import { Avatar, Box, Button, Divider, ListItemIcon, ListItemText, Menu, MenuItem } from "@mui/material";
-import { Add, Logout, Person } from "@mui/icons-material";
+import Add from "@mui/icons-material/Add";
+import Person from "@mui/icons-material/Person";
+import Logout from "@mui/icons-material/Logout";
 import { Link } from "react-router";
+import { Password } from "@mui/icons-material";
 
 export default function UserMenu() {
     const { currentUser, logoutUser } = useAccount();
@@ -55,6 +58,12 @@ export default function UserMenu() {
                         <Person />
                     </ListItemIcon>
                     <ListItemText>My profile</ListItemText>
+                </MenuItem>
+                <MenuItem component={Link} to={'/change-password'} onClick={handleClose}>
+                    <ListItemIcon>
+                        <Password />
+                    </ListItemIcon>
+                    <ListItemText>Change password</ListItemText>
                 </MenuItem>
                 <Divider />
                 <MenuItem onClick={() => {
