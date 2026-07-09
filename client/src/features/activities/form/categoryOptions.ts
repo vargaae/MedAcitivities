@@ -1,8 +1,10 @@
 export const categoryOptions = [
-    { text: 'Drinks', value: 'drinks' },
-    { text: 'Culture', value: 'culture' },
-    { text: 'Film', value: 'film' },
-    { text: 'Food', value: 'food' },
-    { text: 'Music', value: 'music' },
-    { text: 'Travel', value: 'travel' },
-]
+  { text: "Examination", value: "examination" },
+  { text: "Consultation", value: "consultation" },
+  { text: "Treatment", value: "treatment" },
+  { text: "Physiotherapy", value: "physiotherapy" },
+  { text: "Laboratory", value: "laboratory" },
+  { text: "Imaging", value: "imaging" },
+  { text: "Control", value: "control" },
+  { text: "Surgery", value: "surgery" },
+];

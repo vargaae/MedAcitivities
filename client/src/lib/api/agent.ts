@@ -10,8 +10,7 @@ const sleep = (delay: number) => {
 }
 
 const agent = axios.create({
-    baseURL: import.meta.env.VITE_API_URL,
-    withCredentials: true
+    baseURL: import.meta.env.VITE_API_URL
 });
 
 agent.interceptors.request.use(config => {
@@ -21,12 +20,12 @@ agent.interceptors.request.use(config => {
 
 agent.interceptors.response.use(
     async response => {
-        if (import.meta.env.DEV) await sleep(1000);
+        await sleep(1000);
         store.uiStore.isIdle();
         return response;
     },
     async error => {
-        if (import.meta.env.DEV) await sleep(1000);
+        await sleep(1000);
         store.uiStore.isIdle(); // Ensure the busy state is reset on error
         const {data, status} = error.response;
         switch (status) {
@@ -44,11 +43,7 @@ agent.interceptors.response.use(
             }
                 break;
             case 401:
-                if (data.detail === 'NotAllowed') {
-                    throw new Error(data.detail)
-                } else {
-                    toast.error('Unauthorised');
-                }
+                toast.error('unauthorised');
                 break;
             case 403:
                 toast.error('forbidden');

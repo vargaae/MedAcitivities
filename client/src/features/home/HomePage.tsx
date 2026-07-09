@@ -41,7 +41,7 @@ export default function HomePage() {
         variant="contained"
         sx={{ height: 80, borderRadius: 4, fontSize: "1.5rem" }}
       >
-        Take me to the activities!
+        Login or Register
       </Button>
     </Paper>
   );
