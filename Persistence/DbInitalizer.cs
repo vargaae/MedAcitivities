@@ -11,17 +11,17 @@ public class DbInitalizer
 
         var activities = new List<Activity>
         {
-           new()
-           {
-               Title = "Első ortopédiai vizsgálat",
-               Date = DateTime.Now.AddMonths(-2),
-               Description = "Első szakorvosi vizsgálat jobb Achilles-ín fájdalom miatt.",
-               Category = "Vizsgálat",
-               City = "Budapest",
-               Venue = "Semmelweis Egyetem Ortopédiai Klinika",
-               Latitude = 47.488820,
-               Longitude = 19.086320
-           },
+        new()
+        {
+            Title = "Első ortopédiai vizsgálat",
+            Date = DateTime.Now.AddMonths(-2),
+            Description = "Első szakorvosi vizsgálat jobb Achilles-ín fájdalom miatt.",
+            Category = "Vizsgálat",
+            City = "Budapest",
+    Venue = "Semmelweis Egyetem Ortopédiai Klinika",
+        Latitude = 47.488820,
+            Longitude = 19.086320
+        },
 new()
 {
     Title = "MR vizsgálat",

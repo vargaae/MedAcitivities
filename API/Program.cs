@@ -1,3 +1,4 @@
+using Application.Activities.Queries;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 
@@ -17,9 +18,11 @@ builder.Services.AddDbContext<AppDbContext>(options =>
         policy
             .AllowAnyHeader()
             .AllowAnyMethod()
-            .WithOrigins("https://localhost:3000", "http://localhost:3001");
+            .WithOrigins("http://localhost:3000", "http://localhost:3001","https://localhost:3000", "https://localhost:3001");
     });
 });
+
+builder.Services.AddMediatR(x => x.RegisterServicesFromAssemblyContaining<GetActivityList.Handler>());
 
 var app = builder.Build();
 
