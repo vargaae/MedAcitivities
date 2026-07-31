@@ -1,6 +1,6 @@
-# 🏥 EgészségÚt / MedActivities
+# EgészségÚt / MedActivities
 
-**Healthcare Activity and Patient Management System**
+**Egészségügyi Eseménykezelő Rendszer / Healthcare Activity and Patient Management System**
 
 ## Leírás
 
@@ -218,10 +218,16 @@ A merge előtt:
 - Database
 - Windows Forms
 - REST API
+- React frontend
+- UI/UX
+- API integráció
+- Tesztelés
 
 **Maloschik Erik**
 
+- Backend
 - React frontend
+- Windows Forms
 - UI/UX
 - API integráció
 - Tesztelés
