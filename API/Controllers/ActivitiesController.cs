@@ -1,3 +1,4 @@
+using Application.Activities.Commands;
 using Application.Activities.Queries;
 using Domain;
 using MediatR;
@@ -19,5 +20,11 @@ public class ActivitiesController(AppDbContext context, IMediator mediator) : Ba
     public async Task<ActionResult<Activity>> GetActivity(string id)
     {
         return await Mediator.Send(new GetActivityDetails.Query{Id = id});
+    }
+
+    [HttpPost]
+    public async Task<ActionResult<string>> CreateActivity(Activity activity)
+    {
+        return new ActionResult<string>(await Mediator.Send(new CreateActivity.Command { Activity = activity }));
     }
 }
