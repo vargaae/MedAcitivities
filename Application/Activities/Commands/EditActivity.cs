@@ -22,7 +22,7 @@ public required Activity Activity { get; set; }
 
             mapper.Map(request.Activity, activity);
 
-            // activity.Title = request.Activity.Title;
+            // activity.Title = request.Activity.Title; // -> Automappert-> ezt ahelyett használjuk a mapper-t, ami automatikusan átviszi az értékeket a request.Activity-ből az activity-be
 
             await context.SaveChangesAsync(cancellationToken);
         }

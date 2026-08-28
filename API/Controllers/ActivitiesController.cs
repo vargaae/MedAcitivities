@@ -35,4 +35,12 @@ public class ActivitiesController(AppDbContext context, IMediator mediator) : Ba
 
         return NoContent();
     }
+
+    [HttpDelete("{id}")]
+    public async Task<ActionResult> DeleteActivity(string id)
+    {
+        await Mediator.Send(new DeleteActivity.Command { Id = id });
+
+        return Ok();
+    }
 }
