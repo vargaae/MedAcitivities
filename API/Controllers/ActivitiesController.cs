@@ -27,4 +27,12 @@ public class ActivitiesController(AppDbContext context, IMediator mediator) : Ba
     {
         return new ActionResult<string>(await Mediator.Send(new CreateActivity.Command { Activity = activity }));
     }
+
+    [HttpPut]
+    public async Task<ActionResult> UpdateActivity(Activity activity)
+    {
+        await Mediator.Send(new EditActivity.Command { Activity = activity });
+
+        return NoContent();
+    }
 }
